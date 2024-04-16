@@ -5,6 +5,22 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link href="css/style.css" rel="stylesheet" />
+    <script>
+      function toggleNav() {
+        console.log("eh");
+        document.getElementById("overlay").classList.toggle("hidden");
+      }
+    </script>
   </head>
-  <body></body>
+  <body>
+    <div id="world-map">
+      <h1 style="color: white; margin: 0px">world map</h1>
+    </div>
+    <div id="popout" onclick="toggleNav()">&lt</div>
+    <div id="overlay" class="hidden">
+      <div id="collapse" onclick="toggleNav()">X</div>
+
+      <h1>charts</h1>
+    </div>
+  </body>
 </html>
