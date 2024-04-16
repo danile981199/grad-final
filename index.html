@@ -5,6 +5,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link href="css/style.css" rel="stylesheet" />
+    <script src="https://d3js.org/d3.v6.min.js"></script>
     <script>
       function toggleNav() {
         console.log("eh");
@@ -1313,5 +1314,12 @@
 
       <h1>charts</h1>
     </div>
+
+    <script>
+      //get country onclick
+      d3.selectAll("path").on("click", function (e) {
+        console.log(e.target.attributes.title.value);
+      });
+    </script>
   </body>
 </html>
