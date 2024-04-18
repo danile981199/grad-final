@@ -1320,6 +1320,34 @@
       d3.selectAll("path").on("click", function (e) {
         console.log(e.target.attributes.title.value);
       });
+
+      //display country on hover
+      d3.selectAll("path").on("mouseover", function(event, d) {
+        var title = d3.select(this).attr("title");
+
+        // Create a tooltip element
+        var tooltip = document.createElement("div");
+        tooltip.classList.add("tooltip");
+        tooltip.textContent = title;
+
+    
+        var bbox = this.getBBox();
+        var centerX = bbox.x + bbox.width/2;
+        var centerY = bbox.y + bbox.height/2;
+
+        tooltip.style.position = "absolute";
+        tooltip.style.left = (bbox.x + window.pageXOffset + bbox.width / 2 - tooltip.offsetWidth / 2) + "px";
+        tooltip.style.top = (bbox.y + window.pageYOffset + bbox.height / 2 - tooltip.offsetHeight / 2) + "px";
+
+        document.body.appendChild(tooltip);
+      }).on("mouseout", function() {
+        d3.select(".tooltip").remove();
+
+
+});
+
+
     </script>
+
   </body>
 </html>
